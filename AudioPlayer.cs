@@ -427,6 +427,8 @@ public class AudioPlayer : MonoBehaviour
 
     void Update()
     {
+        AudioClipStorage.DrainPendingLoads();
+
         double packetInterval = (double)AudioClipPlayback.PacketSize / AudioClipPlayback.SamplingRate;
         double now = Time.unscaledTimeAsDouble;
 
